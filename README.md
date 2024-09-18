@@ -42,33 +42,6 @@ _Example of an image with detected plastic types._
 ![Detected Plastics](./img/img2.png)
 _Example of the detected plastic types and their recyclability information._
 
-## 📥 Installation
-
-To run this application locally, follow these steps:
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/green-wave.git
-   ```
-
-2. **Navigate to the Project Directory**:
-
-   ```bash
-   cd green-wave
-   ```
-
-3. **Install Dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-4. **Start the Application**:
-   ```bash
-   npm start
-   ```
-
 ## 📝 License
 
 This project is open-source and available under the MIT License. Feel free to modify, distribute, and use it as needed.
