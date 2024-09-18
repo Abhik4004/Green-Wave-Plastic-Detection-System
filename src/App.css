@@ -1,38 +1,110 @@
+/* General page styling */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #a5d6a7,
+    #e8f5e9
+  ); /* Gradient background */
+  color: #2e7d32; /* Dark green text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app container styling */
 .App {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White card background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for card */
+  border-radius: 12px; /* Rounded corners */
   text-align: center;
+  border: 1px solid #c8e6c9; /* Light green border */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Headings styling */
+h2 {
+  color: #1b5e20; /* Darker green for heading */
+  font-size: 2.5rem; /* Increased font size */
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  color: #388e3c; /* Medium green for subheadings */
+  font-size: 1.5rem; /* Adjusted font size */
+  margin-top: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* File input styling */
+input[type="file"] {
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
+  background-color: #a5d6a7; /* Light green background for input */
+  color: #2e7d32;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #81c784; /* Slightly darker green on hover */
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(
+    135deg,
+    #66bb6a,
+    #43a047
+  ); /* Green gradient button */
   color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: linear-gradient(
+    135deg,
+    #43a047,
+    #66bb6a
+  ); /* Darker gradient on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styling for the detected list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f1f8e9; /* Very light green background for list items */
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 1.1rem;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Canvas styling */
+canvas {
+  border: 2px solid #a5d6a7;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Recyclable info styling */
+em {
+  color: #1b5e20; /* Dark green for recyclable info */
+  font-style: italic;
 }
