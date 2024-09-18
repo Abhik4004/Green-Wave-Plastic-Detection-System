@@ -6,9 +6,10 @@ function App() {
   const [base64Image, setBase64Image] = useState("");
   const [preview, setPreview] = useState("");
   const [predictions, setPredictions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const canvasRef = useRef(null);
 
-  // A mapping of plastic types to recyclable properties
   const recyclableProperties = {
     "PET Bottle": "Easily recyclable, used in water bottles and containers.",
     HDPE: "Widely recyclable, used in milk jugs, detergent bottles.",
@@ -25,9 +26,9 @@ function App() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        const base64String = reader.result.split(",")[1]; // Only get base64 part
+        const base64String = reader.result.split(",")[1];
         setBase64Image(base64String);
-        setPreview(reader.result); // Use the full data URL for preview
+        setPreview(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -41,24 +42,28 @@ function App() {
       return;
     }
 
+    setLoading(true);
+    setError(null);
+
     try {
       const response = await axios({
         method: "POST",
-        url: "https://detect.roboflow.com/plastic-recyclable-detection/2",
+        url: process.env.REACT_APP_API_URL,
         params: {
-          api_key: "raJDUCC0UZjkFno0DYYz", // Replace with your actual Roboflow API key
+          api_key: process.env.REACT_APP_API_KEY,
         },
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        data: base64Image, // Send only the base64 image data
+        data: base64Image,
       });
 
-      // Set the predictions (multiple classes)
-      console.log(response.data.predictions);
       setPredictions(response.data.predictions);
     } catch (error) {
+      setError("Error detecting plastic type. Please try again.");
       console.error("Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -78,12 +83,10 @@ function App() {
         predictions.forEach((prediction) => {
           const { x, y, width, height, class: detectedClass } = prediction;
 
-          // Draw bounding box
           ctx.strokeStyle = "#FF0000";
           ctx.lineWidth = 2;
           ctx.strokeRect(x - width / 2, y - height / 2, width, height);
 
-          // Draw label
           ctx.fillStyle = "#FF0000";
           ctx.font = "16px Arial";
           ctx.fillText(
@@ -102,8 +105,12 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <input type="file" accept="image/*" onChange={handleFileChange} />
-        <button type="submit">Detect Plastic Type</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Processing..." : "Detect Plastic Type"}
+        </button>
       </form>
+
+      {error && <p className="error">{error}</p>}
 
       {preview && (
         <div>
