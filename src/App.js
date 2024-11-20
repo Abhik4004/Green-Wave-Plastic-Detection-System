@@ -11,13 +11,27 @@ function App() {
   const canvasRef = useRef(null);
 
   const recyclableProperties = {
-    "PET Bottle": "Easily recyclable, used in water bottles and containers.",
-    HDPE: "Widely recyclable, used in milk jugs, detergent bottles.",
-    PVC: "Recyclable in some areas, often used for pipes and cable insulation.",
-    LDPE: "Recyclable in some programs, used in plastic bags and films.",
-    PP: "Recyclable, used in yogurt containers and bottle caps.",
-    PS: "Difficult to recycle, used in foam cups and containers.",
-    Other: "Not easily recyclable, used in multi-material plastics.",
+    "PET Bottle":
+      "Easily recyclable, used in water bottles and containers. Recyclability Score: 9/10",
+    HDPE: "Widely recyclable, used in milk jugs, detergent bottles. Recyclability Score: 8/10",
+    PVC: "Recyclable in some areas, often used for pipes and cable insulation. Recyclability Score: 5/10",
+    LDPE: "Recyclable in some programs, used in plastic bags and films. Recyclability Score: 6/10",
+    PP: "Recyclable, used in yogurt containers and bottle caps. Recyclability Score: 7/10",
+    PS: "Difficult to recycle, used in foam cups and containers. Recyclability Score: 3/10",
+    Other:
+      "Not easily recyclable, used in multi-material plastics. Recyclability Score: 2/10",
+    "HDPE Plastic":
+      "Widely recyclable, used in milk jugs, detergent bottles. Recyclability Score: 8/10",
+    "Multi-layer Plastic":
+      "Not easily recyclable, used in packaging. Recyclability Score: 2/10",
+    "Single-Use-Plastic":
+      "Difficult to recycle, often used in disposable items. Recyclability Score: 3/10",
+    "Single-layer Plastic":
+      "Recyclable in some programs, used in various packaging. Recyclability Score: 5/10",
+    "Squeeze-Tube":
+      "Not easily recyclable, used in toothpaste and creams. Recyclability Score: 4/10",
+    "UHT-Box":
+      "Recyclable in some areas, used in long-life milk and juice cartons. Recyclability Score: 5/10",
   };
 
   const handleFileChange = (event) => {
@@ -35,6 +49,8 @@ function App() {
   };
 
   const handleSubmit = async (event) => {
+    // console.log("API URL:", process.env.REACT_APP_API_URL);
+    // console.log("API KEY:", process.env.REACT_APP_API_KEY);
     event.preventDefault();
 
     if (!base64Image) {

@@ -3,10 +3,10 @@ body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(
     135deg,
-    #a5d6a7,
+    #c8e6c9,
     #e8f5e9
-  ); /* Gradient background */
-  color: #2e7d32; /* Dark green text */
+  ); /* Lighter green gradient background for a calming effect */
+  color: #2e7d32; /* Deep green text for readability */
   margin: 0;
   padding: 0;
 }
@@ -15,42 +15,43 @@ body {
 .App {
   max-width: 800px;
   margin: 50px auto;
-  padding: 20px;
-  background-color: #ffffff; /* White card background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for card */
-  border-radius: 12px; /* Rounded corners */
+  padding: 25px;
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow for card */
+  border-radius: 15px; /* Rounded corners for a soft feel */
   text-align: center;
-  border: 1px solid #c8e6c9; /* Light green border */
+  border: 1px solid #c8e6c9; /* Light green border for soft emphasis */
 }
 
 /* Headings styling */
 h2 {
-  color: #1b5e20; /* Darker green for heading */
-  font-size: 2.5rem; /* Increased font size */
+  color: #1b5e20; /* Strong, earthy green for heading */
+  font-size: 2.6rem; /* Slightly larger font size */
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 700; /* Bold for emphasis */
 }
 
 h3 {
   color: #388e3c; /* Medium green for subheadings */
-  font-size: 1.5rem; /* Adjusted font size */
+  font-size: 1.6rem; /* Slightly bigger font size for clarity */
   margin-top: 30px;
 }
 
 /* File input styling */
 input[type="file"] {
   margin: 20px 0;
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #2e7d32;
   border-radius: 8px;
-  background-color: #a5d6a7; /* Light green background for input */
+  background-color: #a5d6a7; /* Soft green background */
   color: #2e7d32;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 input[type="file"]:hover {
-  background-color: #81c784; /* Slightly darker green on hover */
+  background-color: #81c784; /* Slightly darker green for a more eco-friendly feel */
+  transform: scale(1.05); /* Subtle scale effect on hover */
 }
 
 /* Button styling */
@@ -59,15 +60,15 @@ button {
     135deg,
     #66bb6a,
     #43a047
-  ); /* Green gradient button */
+  ); /* Eco-friendly green gradient button */
   color: white;
   border: none;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  border-radius: 8px;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a friendly vibe */
 }
 
 button:hover {
@@ -75,36 +76,59 @@ button:hover {
     135deg,
     #43a047,
     #66bb6a
-  ); /* Darker gradient on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+  ); /* Darker gradient on hover for emphasis */
+  transform: scale(
+    1.05
+  ); /* Slightly enlarge button on hover for interactive feel */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow for clickability */
 }
 
 /* Styling for the detected list */
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  background-color: #f1f8e9; /* Very light green background for list items */
+  background-color: #f1f8e9; /* Light green background for list items */
   border: 1px solid #a5d6a7;
-  border-radius: 8px;
-  margin: 10px 0;
+  border-radius: 10px;
+  margin: 12px 0;
   padding: 15px;
   font-size: 1.1rem;
   text-align: left;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for readability */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+  background-color: #dcedc8; /* Slightly darker green on hover */
+  transform: scale(1.02); /* Soft hover effect */
 }
 
 /* Canvas styling */
 canvas {
   border: 2px solid #a5d6a7;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 /* Recyclable info styling */
 em {
-  color: #1b5e20; /* Dark green for recyclable info */
+  color: #388e3c; /* Softer green for eco-friendly emphasis */
   font-style: italic;
+}
+
+/* Error message styling */
+.error {
+  color: #f44336; /* Red color for errors */
+  background-color: #f8d7da; /* Light red background for error message */
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
 }
