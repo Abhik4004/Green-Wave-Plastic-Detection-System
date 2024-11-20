@@ -221,6 +221,10 @@ function App() {
           </ul>
         </div>
       )}
+
+      <footer>
+        <span className="gaegu-regular">アビク・ゴーシュ</span>
+      </footer>
     </div>
   );
 }
