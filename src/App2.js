@@ -162,7 +162,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Green Wave</h2>
+      <h2 className="rancho-regular">PlastiSeek</h2>
       <div>
         <form onSubmit={handleSubmit}>
           <input type="file" accept="image/*" onChange={handleFileChange} />

@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Rancho&display=swap");
+
+.mrs-saint-delafield-regular {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rancho-regular {
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* General page styling */
 body {
   font-family: "Arial", sans-serif;
