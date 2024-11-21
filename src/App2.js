@@ -12,6 +12,14 @@ function App() {
   const videoRef = useRef(null);
   const captureCanvasRef = useRef(null);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [accessCount, setAccessCount] = useState(0);
+
+  useEffect(() => {
+    const count = parseInt(localStorage.getItem("accessCount") || "0", 10);
+    const updateCount = count + 1;
+    localStorage.setItem("accessCount", updateCount);
+    setAccessCount(updateCount);
+  }, []);
 
   const recyclableProperties = {
     "PET Bottle":
@@ -222,7 +230,7 @@ function App() {
       )}
 
       <footer>
-        <span className="gaegu-regular">アビク・ゴーシュ</span>
+        <span className="gaegu-regular">アビク・ゴーシュ {accessCount}</span>
       </footer>
     </div>
   );
