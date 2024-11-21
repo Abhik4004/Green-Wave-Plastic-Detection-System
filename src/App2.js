@@ -179,12 +179,11 @@ function App() {
         </form>
 
         {isCameraOpen && (
-          <div>
-            <video
-              ref={videoRef}
-              style={{ width: "100%", maxWidth: "600px" }}
-            />
-            <button onClick={handleCapture}>Capture</button>
+          <div className="camera-container">
+            <video ref={videoRef} className="video-feed" />
+            <button onClick={handleCapture} className="capture-button">
+              Capture
+            </button>
             <canvas ref={captureCanvasRef} style={{ display: "none" }}></canvas>
           </div>
         )}
