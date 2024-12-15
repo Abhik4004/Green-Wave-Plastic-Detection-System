@@ -61,14 +61,21 @@ function App() {
   const handleCameraClick = () => {
     setIsCameraOpen(true);
     navigator.mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({
+        video: {
+          facingMode: { exact: 'environment' }, // Use 'environment' for the rear camera
+        },
+      })
       .then((stream) => {
         videoRef.current.srcObject = stream;
         videoRef.current.play();
       })
       .catch((err) => {
         console.error('Error accessing camera:', err);
-        setError('Unable to access the camera.');
+        setError(
+          'Unable to access the camera. Ensure permissions are granted.'
+        );
+        setIsCameraOpen(false);
       });
   };
 
